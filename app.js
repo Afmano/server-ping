@@ -4,7 +4,7 @@ import morgan from "morgan";
 const app = express();
 const port = process.env.PORT || "3001";
 const pingURL =
-  process.env.PING_URL || "telegram-gift-bot-3jp7.onrender.com/ping";
+  process.env.PING_URL || "https://telegram-gift-bot-3jp7.onrender.com/ping";
 
 app.use(morgan("dev"));
 
@@ -24,5 +24,5 @@ app.listen(port, () => {
 
 function sendPing() {
   console.log("Trying to ping...");
-  fetch(pingURL);
+  fetch(pingURL).then(console.log("Successful!"));
 }
