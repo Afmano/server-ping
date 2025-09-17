@@ -18,7 +18,8 @@ app.get("/ping", (req, res) => {
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
-  setInterval(sendPing, 300000); //5min
+  sendPing();//initial ping
+  setInterval(sendPing, 300000); //every 5mins
 });
 
 function sendPing() {
